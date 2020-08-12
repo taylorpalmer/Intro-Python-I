@@ -31,18 +31,30 @@ import sys
 import calendar
 from datetime import datetime
 
-args = [int(n) for n in sys.argv[1:]]
+# args = [int(n) for n in sys.argv[1:]]
 
-if len(args) == 0:
-    month = datetime.now().month
-    year = datetime.now().year
-elif len(args) == 1:
-    month = args[0]
-    year = datetime.now().year
-elif len(args) == 2:
-    month = args[0]
-    year = args[1]
+# if len(args) == 0:
+#     month = datetime.now().month
+#     year = datetime.now().year
+# elif len(args) == 1:
+#     month = args[0]
+#     year = datetime.now().year
+# elif len(args) == 2:
+#     month = args[0]
+#     year = args[1]
+# else:
+#     print("Arguments expected")
+#     sys.exit()
+# print(month, year)
+
+my_cal = calendar.TextCalendar(firstweekday=6)
+date_today = datetime.now()
+if len(sys.argv) == 1:
+    my_cal.prmonth(date_today.year, date_today.month)
+elif len(sys.argv) == 2:
+    my_cal.prmonth(date_today.year, int(sys.argv[1]))
+elif len(sys.argv) == 3:
+    my_cal.prmonth(int(sys.argv[2], int(sys.argv[1])))
 else:
-    print("Arguments expected")
-    sys.exit()
-print(month, year)
+    print("[]")
+sys.exit()

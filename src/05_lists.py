@@ -30,6 +30,7 @@ print(x + y[1:])
 
 # Print the length of list x
 # YOUR CODE HERE
+print(len(x))
 
 # Print all the values in x multiplied by 1000
 # YOUR CODE HERE
